@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="br">
+<head>
+<meta charset="UTF-8">
+
+<title>b.code</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<style>
+  html, body {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.bg-video {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  top: 0;
+  z-index: -1;
+}
+
+.page-wrapper {
+    margin-right: auto;
+    margin-left: auto;
+    width: 1280px;
+    height: 100%;
+    box-shadow: 0px 0px 0px 100px #202020;
+    background: linear-gradient(black, #202020 50%);
+}
+
+.section {
+  margin-right: auto;
+  margin-left: auto;
+  /*width: 1281px;
+  height: 950px;*/
+  overflow: hidden;
+}
+.section--1 {
+  background: url("https://i.imgur.com/1z2aQ9T.png");
+  background-repeat: no-repeat;
+  background-position: 50% 60%;
+  background-size: 60%;
+}
+.section__col {
+  position: fixed;
+  display: inline-block;
+  float: left;
+  width: 128px;
+  height: 750px;
+  /*background: url("https://i.imgur.com/3pwhPeG.jpg");*/
+  background: url("https://i.imgur.com/ec83Z6H.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.section__col--0 {
+  margin-left: calc(128px * 0);
+  background-position: calc(-128px * 0);
+}
+.section__col--1 {
+  margin-left: calc(128px * 1);
+  background-position: calc(-128px * 1);
+}
+.section__col--2 {
+  margin-left: calc(128px * 2);
+  background-position: calc(-128px * 2);
+}
+.section__col--3 {
+  margin-left: calc(128px * 3);
+  background-position: calc(-128px * 3);
+}
+.section__col--4 {
+  margin-left: calc(128px * 4);
+  background-position: calc(-128px * 4);
+}
+.section__col--5 {
+  margin-left: calc(128px * 5);
+  background-position: calc(-128px * 5);
+}
+.section__col--6 {
+  margin-left: calc(128px * 6);
+  background-position: calc(-128px * 6);
+}
+.section__col--7 {
+  margin-left: calc(128px * 7);
+  background-position: calc(-128px * 7);
+}
+.section__col--8 {
+  margin-left: calc(128px * 8);
+  background-position: calc(-128px * 8);
+}
+.section__col--9 {
+  margin-left: calc(128px * 9);
+  background-position: calc(-128px * 9);
+}
+.section__col--10 {
+  margin-left: calc(128px * 10);
+  background-position: calc(-128px * 10);
+}
+
+.trailer-wrapper {
+  margin-top: 25px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 90%;
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<body>
+<video class="bg-video" autoplay="" loop="" muted="">
+<source src=".mp4" type="video/mp4" />
+</video>
+<main class="page-wrapper">
+<section class="section section--1">
+<div class="section__col section__col--0"></div>
+<div class="section__col section__col--1"></div>
+<div class="section__col section__col--2"></div>
+<div class="section__col section__col--3"></div>
+<div class="section__col section__col--4"></div>
+<div class="section__col section__col--5"></div>
+<div class="section__col section__col--6"></div>
+<div class="section__col section__col--7"></div>
+<div class="section__col section__col--8"></div>
+<div class="section__col section__col--9"></div>
+</section>
+<section class="section section--2">
+<div class="trailer-wrapper">
+<iframe class="trailer" width="100%" height="721" src="https://www.youtube.com/embed/JVpTp8IHdEg?autoplay=1" allow="autoplay" frameborder="0" allowfullscreen="0"></iframe>
+
+<!---<iframe class="trailer" width="100%" height="721" src="https://www.youtube.com/embed/JVpTp8IHdEg" frameborder="0" allowfullscreen="0"></iframe>--->
+</div>
+</div>
+</section>
+</main>
+</body>
+<script>
+"use strict";"object"!=typeof window.CP&&(window.CP={}),window.CP.PenTimer={programNoLongerBeingMonitored:!1,timeOfFirstCallToShouldStopLoop:0,_loopExits:{},_loopTimers:{},START_MONITORING_AFTER:2e3,STOP_ALL_MONITORING_TIMEOUT:5e3,MAX_TIME_IN_LOOP_WO_EXIT:2200,exitedLoop:function(o){this._loopExits[o]=!0},shouldStopLoop:function(o){if(this.programKilledSoStopMonitoring)return!0;if(this.programNoLongerBeingMonitored)return!1;if(this._loopExits[o])return!1;var t=this._getTime();if(0===this.timeOfFirstCallToShouldStopLoop)return this.timeOfFirstCallToShouldStopLoop=t,!1;var i=t-this.timeOfFirstCallToShouldStopLoop;if(i<this.START_MONITORING_AFTER)return!1;if(i>this.STOP_ALL_MONITORING_TIMEOUT)return this.programNoLongerBeingMonitored=!0,!1;try{this._checkOnInfiniteLoop(o,t)}catch(e){return this._sendErrorMessageToEditor(),this.programKilledSoStopMonitoring=!0,!0}return!1},_sendErrorMessageToEditor:function(){try{if(this._shouldPostMessage()){var o={action:"",line:this._findAroundLineNumber()};parent.postMessage(o,"*")}else this._throwAnErrorToStopPen()}catch(t){this._throwAnErrorToStopPen()}},_shouldPostMessage:function(){return document.location.href.match(/boomerang/)},_throwAnErrorToStopPen:function(){throw"HELLO WORD"},_findAroundLineNumber:function(){var o=new Error,t=0;if(o.stack){var i=o.stack.match(/boomerang\S+:(\d+):\d+/);i&&(t=i[1])}return t},_checkOnInfiniteLoop:function(o,t){if(!this._loopTimers[o])return this._loopTimers[o]=t,!1;if(t-this._loopTimers[o]>this.MAX_TIME_IN_LOOP_WO_EXIT)throw"Infinite Loop found on loop: "+o},_getTime:function(){return+new Date}},window.CP.shouldStopExecution=function(o){var t=window.CP.PenTimer.shouldStopLoop(o);return!0===t&&console.warn("[b.code]: An infinite loop (or a loop taking too long) was detected, so we stopped its execution. Sorry!"),t},window.CP.exitedLoop=function(o){window.CP.PenTimer.exitedLoop(o)};</script>
+
+<script id="">
+      (function () {
+
+  window.addEventListener('scroll', function () {
+    var scrolling = window.scrollY,
+    cutoff = 8;
+    if (scrolling > cutoff) {
+      for (i = 0; i < 10; i++) {if (window.CP.shouldStopExecution(0)) break;
+        // document.querySelector("html").style.display = 'none';
+        document.querySelector(".section__col--" + i).style.marginTop = "-900px";
+        document.querySelector(".section__col--" + i).style.transition = "all " + i + "s";
+
+      }window.CP.exitedLoop(0);
+    } else
+    if (scrolling < cutoff) {
+      for (i = 0; i < 10; i++) {if (window.CP.shouldStopExecution(1)) break;
+        document.querySelector(".section__col--" + i).style.marginTop = "0px";
+        // document.getElementsByClassName("section__col--"+i).style.transition = "all "+i+"s"
+        // console.log(i)
+      }window.CP.exitedLoop(1);
+    }
+  });
+})();
+      //# sourceURL=pen.js
+    </script>
+</body>
+</html>
